@@ -5,7 +5,7 @@ from .forms import EventForm
 # List all events
 def event_list(request):
     events = Event.objects.all()
-    return render(request, 'events/event_list.html', {'events': events})
+    return render(request, 'event_list.html', {'events': events})
 
 # Create a new event
 def event_create(request):
@@ -16,7 +16,7 @@ def event_create(request):
             return redirect('event_list')
     else:
         form = EventForm()
-    return render(request, 'events/event_form.html', {'form': form})
+    return render(request, 'event_form.html', {'form': form})
 
 # Edit an existing event
 def event_edit(request, pk):
@@ -28,7 +28,7 @@ def event_edit(request, pk):
             return redirect('event_list')
     else:
         form = EventForm(instance=event)
-    return render(request, 'events/event_form.html', {'form': form})
+    return render(request, 'event_form.html', {'form': form})
 
 # Delete an event
 def event_delete(request, pk):
@@ -36,5 +36,5 @@ def event_delete(request, pk):
     if request.method == 'POST':
         event.delete()
         return redirect('event_list')
-    return render(request, 'events/event_confirm_delete.html', {'event': event})
+    return render(request, 'event_confirm_delete.html', {'event': event})
 
