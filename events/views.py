@@ -2,12 +2,12 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import Event, Participant
 from .forms import EventForm
 
-# List all events
+
 def event_list(request):
     events = Event.objects.all()
     return render(request, 'event_list.html', {'events': events})
 
-# Create a new event
+
 def event_create(request):
     if request.method == 'POST':
         form = EventForm(request.POST)
@@ -18,7 +18,7 @@ def event_create(request):
         form = EventForm()
     return render(request, 'event_form.html', {'form': form})
 
-# Edit an existing event
+
 def event_edit(request, pk):
     event = get_object_or_404(Event, pk=pk)
     if request.method == 'POST':
@@ -30,7 +30,7 @@ def event_edit(request, pk):
         form = EventForm(instance=event)
     return render(request, 'event_form.html', {'form': form})
 
-# Delete an event
+
 def event_delete(request, pk):
     event = get_object_or_404(Event, pk=pk)
     if request.method == 'POST':
@@ -38,7 +38,7 @@ def event_delete(request, pk):
         return redirect('event_list')
     return render(request, 'event_confirm_delete.html', {'event': event})
 
-# Add a participant to an event
+
 def add_participant(request, event_id):
     event = get_object_or_404(Event, id=event_id)
     if request.method == 'POST':
