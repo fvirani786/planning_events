@@ -9,6 +9,8 @@ https://docs.djangoproject.com/en/5.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
+
+DATABASE_URL = os.getenv('DATABASE_URL')
 import dj_database_url
 from pathlib import Path
 
