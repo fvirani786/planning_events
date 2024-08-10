@@ -17,10 +17,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 
-SECRET_KEY = 'django-insecure-+temdq7+_$l1ym920t#mjvh$n+wtc)6dc7!c8oll96s&aj&497'
 
 
-DEBUG = false
+
+DEBUG = False
 
 ALLOWED_HOSTS = [
     ''
@@ -75,18 +75,18 @@ WSGI_APPLICATION = 'events.wsgi.application'
 
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'events',
-        'USER': 'eventsuser',
-        'PASSWORD': 'events',
-        'HOST': 'localhost'
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.postgresql',
+    #     'NAME': 'events',
+    #     'USER': 'eventsuser',
+    #     'PASSWORD': 'events',
+    #     'HOST': 'localhost'
     }
-    # 'default': dj_database_url.config(
-    #     # Replace this value with your local database's connection string.
-    #     default=DATABASE_URL,
-    #     conn_max_age=600
-    # )
+    'default': dj_database_url.config(
+        # Replace this value with your local database's connection string.
+        default=DATABASE_URL,
+        conn_max_age=600
+    )
 }
 
 
