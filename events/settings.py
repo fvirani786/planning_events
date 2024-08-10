@@ -115,8 +115,6 @@ USE_TZ = True
 LOGIN_URL = '/login'
 
 
-
-
 STATIC_URL = '/static/'
 
 
