@@ -1,5 +1,5 @@
 from django.urls import path
-from ..planning_django import views
+from . import views
 
 urlpatterns = [
     path('', views.event_list, name='event_list'),
