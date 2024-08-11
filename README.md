@@ -38,6 +38,16 @@ Make sure you have the following installed:
 
 
 
+
+  USER STORY
+
+     -Users are able to create an event by clicking Event(+) 
+     -The next page will ask the user to enter Name, Description, Date and location 
+     - After user has saved their event it will take you back to the home page 
+     - User will see their event below the Event(+) button
+
+
+
 Below are screenshots of the webpage 
 
 
